@@ -26,8 +26,8 @@ class QRDetector(object):
             yield (b'--frame\r\n'
                    b'Content-Type: image/jpeg\r\n\r\n' + frame + b'\r\n\r\n')
 
-    def __del__(self):
-        self.vs.stop()
+    #def __del__(self):
+        #self.vs.stop()
 
     def flip_if_needed(self, frame):
         if self.flip:

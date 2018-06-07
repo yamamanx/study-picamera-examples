@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="13b4d443-1925-4af1-a80d-259bfb017753" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/camera/main.py" afterPath="$PROJECT_DIR$/camera/main.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/camera/processor/qr_detector.py" afterPath="$PROJECT_DIR$/camera/processor/qr_detector.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -14,11 +13,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="qr_detector.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="qr_detector.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/camera/processor/qr_detector.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="720">
-              <caret line="48" column="0" lean-forward="true" selection-start-line="48" selection-start-column="0" selection-end-line="48" selection-end-column="0" />
+            <state relative-caret-position="435">
+              <caret line="29" column="5" lean-forward="false" selection-start-line="29" selection-start-column="5" selection-end-line="29" selection-end-column="5" />
               <folding>
                 <element signature="e#0#53#0" expanded="true" />
               </folding>
@@ -36,7 +35,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="main.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="main.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/camera/main.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="495">
@@ -83,8 +82,8 @@
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/camera/processor/simple_streamer.py" />
         <option value="$PROJECT_DIR$/camera/processor/person_detector.py" />
-        <option value="$PROJECT_DIR$/camera/processor/qr_detector.py" />
         <option value="$PROJECT_DIR$/camera/main.py" />
+        <option value="$PROJECT_DIR$/camera/processor/qr_detector.py" />
       </list>
     </option>
   </component>
@@ -223,22 +222,22 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/camera/processor/qr_detector.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="720">
-          <caret line="48" column="0" lean-forward="true" selection-start-line="48" selection-start-column="0" selection-end-line="48" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#53#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/camera/main.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="495">
           <caret line="33" column="0" lean-forward="true" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
           <folding>
             <element signature="e#0#50#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/camera/processor/qr_detector.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="435">
+          <caret line="29" column="5" lean-forward="false" selection-start-line="29" selection-start-column="5" selection-end-line="29" selection-end-column="5" />
+          <folding>
+            <element signature="e#0#53#0" expanded="true" />
           </folding>
         </state>
       </provider>
