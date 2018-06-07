@@ -2,7 +2,7 @@ from flask import Flask, render_template, Response
 # from processor.simple_streamer import SimpleStreamer as VideoCamera
 # from processor.pedestrian_detector import PedestrianDetector as VideoCamera
 # from processor.motion_detector import MotionDetector as VideoCamera
-# from processor.qr_detector import QRDetector as VideoCamera
+from processor.qr_detector import QRDetector as Qr
 # from processor.face_detector import FaceDetector as VideoCamera
 from processor.person_detector import PersonDetector as VideoCamera
 
@@ -11,6 +11,7 @@ import threading
 
 video_camera = VideoCamera(flip=False)
 
+qr_detector = Qr(flip=False)
 
 app = Flask(__name__)
 
@@ -27,6 +28,11 @@ def gen(camera):
 @app.route('/video_feed')
 def video_feed():
     return Response(gen(video_camera),
+                    mimetype='multipart/x-mixed-replace; boundary=frame')
+
+@app.route('/stream')
+def stream():
+    return Response(qr_detector.gen(),
                     mimetype='multipart/x-mixed-replace; boundary=frame')
 
 if __name__ == '__main__':
