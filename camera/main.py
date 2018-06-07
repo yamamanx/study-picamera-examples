@@ -9,15 +9,16 @@ from processor.person_detector import PersonDetector as VideoCamera
 import time
 import threading
 
-video_camera = VideoCamera(flip=False)
-
-qr_detector = Qr(flip=False)
+video_camera = VideoCamera(flip=True)
+qr_detector = Qr(flip=True)
 
 app = Flask(__name__)
+
 
 @app.route('/')
 def index():
     return render_template('index.html')
+
 
 def gen(camera):
     while True:
@@ -25,15 +26,18 @@ def gen(camera):
         yield (b'--frame\r\n'
                b'Content-Type: image/jpeg\r\n\r\n' + frame + b'\r\n\r\n')
 
+
 @app.route('/video_feed')
 def video_feed():
     return Response(gen(video_camera),
                     mimetype='multipart/x-mixed-replace; boundary=frame')
 
+
 @app.route('/stream')
 def stream():
     return Response(qr_detector.gen(),
                     mimetype='multipart/x-mixed-replace; boundary=frame')
+
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', debug=False, threaded=True)

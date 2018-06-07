@@ -9,16 +9,16 @@ from picamera import PiCamera
 
 
 class QRDetector(object):
-    def __init__(self, flip = False):
+    def __init__(self, flip=False):
         self.camera = PiCamera()
         self.camera.resolution = (640, 480)
         self.camera.framerate = 32
         self.rawCapture = PiRGBArray(self.camera, size=(640, 480))
 
-        #self.vs = PiVideoStream(resolution=(800, 608)).start()
-        #self.flip = flip
-        time.sleep(0.1)
-        #time.sleep(2.0)
+        self.vs = PiVideoStream(resolution=(800, 608)).start()
+        self.flip = flip
+
+        time.sleep(2.0)
 
     def gen(self):
         while True:
@@ -27,14 +27,13 @@ class QRDetector(object):
                    b'Content-Type: image/jpeg\r\n\r\n' + frame + b'\r\n\r\n')
 
 
+    def __del__(self):
+        self.vs.stop()
 
-    #def __del__(self):
-        #self.vs.stop()
-
-    #def flip_if_needed(self, frame):
-    #    if self.flip:
-    #        return np.flip(frame, 0)
-    #    return frame
+    def flip_if_needed(self, frame):
+        if self.flip:
+            return np.flip(frame, 0)
+        return frame
 
     def get_frame(self):
         #frame = self.flip_if_needed(self.vs.read())
